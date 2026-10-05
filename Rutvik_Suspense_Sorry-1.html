@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Rutvik ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#08050a;color:#fff;font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.screen{width:92%;max-width:430px;text-align:center;position:relative;z-index:2}
+.card{background:rgba(255,255,255,.07);border:1px solid #ffffff18;border-radius:28px;padding:30px 22px;box-shadow:0 0 45px #ff2f7030;backdrop-filter:blur(8px)}
+h1{font-size:29px;margin:10px 0 18px}.pink{color:#ff4f88}p{font-size:17px;line-height:1.65;color:#f4dce5}
+button{border:0;border-radius:30px;padding:14px 25px;margin-top:14px;background:#ff3f79;color:white;font-weight:bold;font-size:16px;box-shadow:0 0 20px #ff3f7960}
+.hidden{display:none}.small{font-size:13px;color:#a98c98}
+.dot{display:inline-block;animation:b 1s infinite}.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
+@keyframes b{50%{opacity:.2}}
+#count{font-size:64px;color:#ff5b91;font-weight:bold;text-shadow:0 0 30px #ff3975}
+.heart{font-size:65px;animation:p 1.2s infinite}@keyframes p{50%{transform:scale(1.18)}}
+.float{position:fixed;bottom:-30px;font-size:24px;animation:f 6s linear infinite;opacity:.8}
+@keyframes f{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="float" style="left:8%">❤️</div><div class="float" style="left:30%;animation-delay:2s">💗</div>
+<div class="float" style="left:55%;animation-delay:4s">💕</div><div class="float" style="left:82%;animation-delay:1s">❤️</div>
+
+<div class="screen">
+
+<div id="s1" class="card">
+<h1>Rutvik... 👀</h1>
+<p>આ કોઈ normal message નથી.<br><br>
+આગળ વધતા પહેલા એક promise કરજે...</p>
+<p><b>છેલ્લા સુધી વાંચીશ? 🤫❤️</b></p>
+<button onclick="go(1)">I Promise 🤞</button>
+</div>
+
+<div id="s2" class="card hidden">
+<h1>Wait... ⏳</h1>
+<p>કદાચ તને લાગે છે કે તને ખબર છે<br>આની અંદર શું છે...</p>
+<p>પણ <b>you have no idea. 👀</b></p>
+<button onclick="go(2)">Continue →</button>
+</div>
+
+<div id="s3" class="card hidden">
+<h1>Secret Message 🔐</h1>
+<p>એક વ્યક્તિ છે...</p>
+<p>જે ક્યારેક ભૂલ કરે છે,<br>ક્યારેક વધારે બોલી જાય છે,<br>પણ એક વાતમાં ક્યારેય ખોટી નથી...</p>
+<p><b>એ તને દિલથી પ્રેમ કરે છે. ❤️</b></p>
+<button onclick="countdown()">Reveal ✨</button>
+</div>
+
+<div id="s4" class="card hidden">
+<div id="count">3</div><p>Something special is coming... ❤️</p>
+</div>
+
+<div id="s5" class="card hidden">
+<div class="heart">🥺❤️</div>
+<h1>The person is...</h1>
+<p style="font-size:27px"><span class="pink">RIYA</span> ❤️</p>
+<p>અને હા...<br>એ તારી પાસે કંઈક કહેવા માંગે છે.</p>
+<button onclick="go(5)">Read My Heart 💌</button>
+</div>
+
+<div id="s6" class="card hidden">
+<h1>Rutvik... ❤️</h1>
+<p>
+મને ખબર છે કે મારી ભૂલ થઈ છે.<br>
+અને કદાચ માત્ર “Sorry” બોલવાથી બધું ઠીક નહીં થાય...
+</p>
+<p><b>પણ હું દિલથી sorry છું. 🥺</b></p>
+<p>
+મારો intention ક્યારેય તને hurt કરવાનો નહોતો.
+તું મારા માટે માત્ર એક person નથી...
+<strong>તું મારી happiness નો એક બહુ મોટો ભાગ છે. ❤️</strong>
+</p>
+<button onclick="go(6)">One Last Surprise 👀</button>
+</div>
+
+<div id="s7" class="card hidden">
+<h1>એક છેલ્લો સવાલ... 🥺</h1>
+<p>મારી ભૂલ માટે મને<br><b>એક chance મળશે?</b></p>
+<button onclick="forgive()">YES ❤️</button>
+</div>
+
+<div id="s8" class="card hidden">
+<div class="heart">❤️</div>
+<h1 class="pink">Thank You, Rutvik! 🥹</h1>
+<p>હવે please ગુસ્સો છોડીને<br>એક cute smile આપજે. 😘</p>
+<p><b>Riya ❤️ Rutvik</b><br>Sorry today. Love always. ♾️</p>
+<p class="small">This little surprise was made only for you.</p>
+</div>
+</div>
+
+<script>
+function hideAll(){document.querySelectorAll(".card").forEach(x=>x.classList.add("hidden"))}
+function show(id){hideAll();document.getElementById(id).classList.remove("hidden")}
+function go(n){show("s"+(n+1))}
+function countdown(){
+ show("s4");let c=3;document.getElementById("count").textContent=c;
+ let t=setInterval(()=>{c--;if(c<=0){clearInterval(t);show("s5")}else document.getElementById("count").textContent=c},900)
+}
+function forgive(){
+ show("s8");
+ for(let i=0;i<45;i++)setTimeout(()=>{
+  let h=document.createElement("div");h.textContent=["❤️","💗","💕","💖"][Math.floor(Math.random()*4)];
+  h.style.position="fixed";h.style.left=Math.random()*100+"vw";h.style.top="95vh";
+  h.style.fontSize=(20+Math.random()*25)+"px";h.style.zIndex=9;h.style.transition="2.5s";
+  document.body.appendChild(h);setTimeout(()=>h.style.transform="translateY(-110vh) scale(1.5)",30);
+  setTimeout(()=>h.remove(),2600)
+ },i*45)
+}
+</script>
+</body>
+</html>
